@@ -8,3 +8,5 @@
 
 [node name="Viewport" type="Viewport" parent="."]
 size = Vector2( 1080, 1920 )
+
+[node name="CanvasLayer" type="CanvasLayer" parent="."]
