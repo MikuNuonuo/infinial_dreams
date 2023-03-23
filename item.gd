@@ -21,12 +21,4 @@ func set_item(nm):
 	item_name = nm
 	$TextureRect.texture = load("res://Asset/" + item_name + ".png")
 	
-	#var stack_size = int(JsonData.item_data[item_name]["StackSize"])
-	#if stack_size == 1:
-		#$Label.visible = false
-	#else:
-	#	$Label.visible = true
-	#	$Label.text = String(item_quantity)
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+

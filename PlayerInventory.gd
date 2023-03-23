@@ -4,10 +4,9 @@ extends Node
 const NUM_INVENTORY_SLOTS = 5
 
 var inventory = {
-	0: ["Bell"],  #--> slot_index: [item_name, item_quantity]
-	1: ["Mirror"],  #--> slot_index: [item_name, item_quantity]
-	2: ["snow flower"],
-	3: ["Slime Potion"],
+	 # slot_index: [item_name]
+	0:"SnowFlower",
+	1:"Bell"
 }
 
 func add_item(item_name):						

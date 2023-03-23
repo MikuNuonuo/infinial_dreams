@@ -11,7 +11,7 @@ var empty_style: StyleBoxTexture = null
 var ItemClass = preload("res://item.tscn")
 var item = null
 
-# Called when the node enters the scene tree for the first time.
+
 func _ready():
 	default_style = StyleBoxTexture.new()
 	empty_style = StyleBoxTexture.new()

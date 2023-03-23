@@ -10,7 +10,8 @@ var holding_item = null
 func _ready():
 	for inv_slot in inventory_slots.get_children():
 		inv_slot.connect("gui_input", self,"slot_gui_input",[inv_slot])
-		initialize_inventory()
+	initialize_inventory()
+	
 		
 func initialize_inventory():
 	var slots = inventory_slots.get_children()
@@ -29,7 +30,7 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 					var temp_item = slot.item
 					slot.pickFromSlot()
 					temp_item.global_position = event.global_position
-					slot.putInSlot(holding_item)
+					slot.putIntoSlot(holding_item)
 					holding_item = temp_item
 			elif slot.item:
 				holding_item = slot.item
@@ -39,6 +40,4 @@ func slot_gui_input(event: InputEvent, slot: SlotClass):
 func _input(event):
 	if holding_item:
 		holding_item.global_position = get_global_mouse_position()
-# Called every frame. 'delta' is the elapsed time since the previous frame.
-#func _process(delta):
-#	pass
+		

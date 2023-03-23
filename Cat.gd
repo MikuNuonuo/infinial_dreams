@@ -3,11 +3,11 @@ extends Node2D
 const n = preload("res://Inventory.tscn")
 var selected = false
 var mouse_offset
-var item_name
+onready var cat_sound = $cat_sound
 
 # Called when the node enters the scene tree for the first time.
 func _ready():
-	item_name = "Bell"
+	pass
 
 
 # Called every frame. 'delta' is the elapsed time since the previous frame.
@@ -20,10 +20,7 @@ func _process(delta):
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		PlayerInventory.add_item(item_name)
-		print(item_name)
-		queue_free()
-		emit_signal("picked")
+		cat_sound.play()
 		
 
 func followMouse():
