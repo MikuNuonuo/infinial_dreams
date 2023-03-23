@@ -2,15 +2,15 @@
 
 importer="texture"
 type="StreamTexture"
-path="res://.import/snowflower.png-031c4681bbeb72d6e2f4bf8d2ea34bfb.stex"
+path="res://.import/Snowflower.png-142c897a3b95fca16515813c1ae654c0.stex"
 metadata={
 "vram_texture": false
 }
 
 [deps]
 
-source_file="res://Asset/snowflower.png"
-dest_files=[ "res://.import/snowflower.png-031c4681bbeb72d6e2f4bf8d2ea34bfb.stex" ]
+source_file="res://Asset/Snowflower.png"
+dest_files=[ "res://.import/Snowflower.png-142c897a3b95fca16515813c1ae654c0.stex" ]
 
 [params]
 

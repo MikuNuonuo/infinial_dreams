@@ -1,0 +1,17 @@
+{
+	“Bell”:{
+	"ItemCategory": "Resource",
+	"StackSize": 99,
+	"Description": Ding, Ding, Ding... Maybe cat will like it!
+	},
+	“Mirror”:{
+	"ItemCategory": "Resource",
+	"StackSize": 123,
+	"Description": What can I use it to do?
+	},
+	“SnowFlower”:{
+	"ItemCategory": "Resource",
+	"StackSize": 2,
+	"Description": beautiful flower!
+	},
+}
