@@ -17,7 +17,7 @@ func _ready():
 	empty_style = StyleBoxTexture.new()
 	default_style.texture = default_tex
 	empty_style.texture = empty_tex
-	
+	Global.connect("Global.item_remove",self,"remove")
 #	if randi() % 2  == 0: 
 #		item = ItemClass.instance()
 #		add_child(item)
@@ -35,6 +35,13 @@ func pickFromSlot():
 	inventoryNode.add_child(item)
 	item = null
 	refresh_style()
+	
+func remove():
+	remove_child(item)
+	var inventoryNode = find_parent("Inventory")
+	inventoryNode.remov_child(item)
+	refresh_style()
+	
 	
 func putIntoSlot(new_item):
 	item = new_item

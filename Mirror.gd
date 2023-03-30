@@ -9,22 +9,21 @@ var ItemClass = preload("res://item.tscn")
 func _ready():
 	item_name = "Mirror"
 
+		
 
-func _process(delta):
-	if selected:
-		followMouse()
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
-		PlayerInventory.add_item(item_name)
-		print(PlayerInventory.inventory)
+		PlayerInventory.add_item("Mirror")
+		#print(PlayerInventory.inventory)
+		Global.emit_signal("picked")
+		Global.Getcystal= "cystal"
 		queue_free()
-		Global.picked = true
+
 		
 
 func followMouse():
 	position = get_global_mouse_position() + mouse_offset
-	
 
 
 #if event.pressed:

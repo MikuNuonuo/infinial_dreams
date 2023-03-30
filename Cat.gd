@@ -5,6 +5,7 @@ var selected = false
 var mouse_offset
 onready var cat_sound = $cat_sound
 
+
 # Called when the node enters the scene tree for the first time.
 func _ready():
 	pass
@@ -33,3 +34,21 @@ func followMouse():
 			#selected = true
 		#else:
 			#selected = false
+
+	
+
+func _on_Area2D_mouse_entered():
+	#print("mouseEnter")\	
+	if Global.mouseTarget == "Bell":
+		PlayerInventory.add_item("Beard")
+		print("111"+Global.mouseTarget)
+		#Global.emit_signal("item_remove")
+		Global.mouseTarget = ""
+		#print(PlayerInventory.inventory)
+		PlayerInventory.item_remove()
+		#Global.emit_signal("item_remove")
+		Global.emit_signal("picked")
+		print(PlayerInventory.inventory)
+		yield(get_tree().create_timer(0.2),"timeout")
+		queue_free()
+
