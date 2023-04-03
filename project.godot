@@ -11,14 +11,13 @@ config_version=4
 [application]
 
 config/name="final"
-run/main_scene="res://Level.tscn"
-config/icon="res://icon.png"
+run/main_scene="res://scene/MainMenu.tscn"
 
 [autoload]
 
-Global="*res://global.gd"
-PlayerInventory="*res://PlayerInventory.gd"
-JSonData="*res://jSONData.gd"
+Global="*res://script/global.gd"
+PlayerInventory="*res://script/PlayerInventory.gd"
+JSonData="*res://script/jSONData.gd"
 
 [display]
 

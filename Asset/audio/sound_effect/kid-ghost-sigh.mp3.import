@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/kid-ghost-sigh.mp3-6bacfe09838b0766d52ba1178b6c43c9.mp3str"
+
+[deps]
+
+source_file="res://Asset/audio/sound_effect/kid-ghost-sigh.mp3"
+dest_files=[ "res://.import/kid-ghost-sigh.mp3-6bacfe09838b0766d52ba1178b6c43c9.mp3str" ]
+
+[params]
+
+loop=false
+loop_offset=0

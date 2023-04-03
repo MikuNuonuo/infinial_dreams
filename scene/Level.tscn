@@ -1,0 +1,748 @@
+[gd_scene load_steps=70 format=2]
+
+[ext_resource path="res://Asset/audio/sound_effect/cat_sound.wav" type="AudioStream" id=1]
+[ext_resource path="res://Asset/level1map.png" type="Texture" id=2]
+[ext_resource path="res://Asset/gohst2.png" type="Texture" id=3]
+[ext_resource path="res://Asset/gohst1.png" type="Texture" id=4]
+[ext_resource path="res://scene/MaigicNote.gd" type="Script" id=5]
+[ext_resource path="res://Asset/Snowflower.png" type="Texture" id=6]
+[ext_resource path="res://Asset/Mirror.png" type="Texture" id=7]
+[ext_resource path="res://Asset/cat+box.png" type="Texture" id=8]
+[ext_resource path="res://Asset/0394de65cdfd63494711320c6b88d39.png" type="Texture" id=9]
+[ext_resource path="res://script/Mirror.gd" type="Script" id=10]
+[ext_resource path="res://script/Moonlight.gd" type="Script" id=11]
+[ext_resource path="res://script/Mouse.gd" type="Script" id=12]
+[ext_resource path="res://scene/Player.gd" type="Script" id=13]
+[ext_resource path="res://script/Cat.gd" type="Script" id=14]
+[ext_resource path="res://script/Snowflower.gd" type="Script" id=15]
+[ext_resource path="res://script/star.gd" type="Script" id=16]
+[ext_resource path="res://script/YellowPotion.gd" type="Script" id=17]
+[ext_resource path="res://script/Bell.gd" type="Script" id=18]
+[ext_resource path="res://Asset/star.png" type="Texture" id=19]
+[ext_resource path="res://Asset/YellowPotion.png" type="Texture" id=20]
+[ext_resource path="res://Asset/drug.png" type="Texture" id=21]
+[ext_resource path="res://Asset/cystal.png" type="Texture" id=22]
+[ext_resource path="res://Asset/audio/music_alt.mp3" type="AudioStream" id=23]
+[ext_resource path="res://Asset/BluePotion.png" type="Texture" id=24]
+[ext_resource path="res://Asset/audio/symbol_02.png" type="Texture" id=25]
+[ext_resource path="res://Asset/Beard.png" type="Texture" id=26]
+[ext_resource path="res://Asset/Bell.png" type="Texture" id=27]
+[ext_resource path="res://scene/Inventory.tscn" type="PackedScene" id=28]
+[ext_resource path="res://script/escape.gd" type="Script" id=29]
+[ext_resource path="res://script/CatBeard.gd" type="Script" id=30]
+[ext_resource path="res://script/BluePotion.gd" type="Script" id=31]
+[ext_resource path="res://script/cystal.gd" type="Script" id=32]
+[ext_resource path="res://script/Ghost.gd" type="Script" id=33]
+[ext_resource path="res://script/drug.gd" type="Script" id=34]
+[ext_resource path="res://script/killGhost.gd" type="Script" id=35]
+[ext_resource path="res://script/Level.gd" type="Script" id=36]
+[ext_resource path="res://Asset/magicSM.png" type="Texture" id=37]
+[ext_resource path="res://Asset/magicNote.png" type="Texture" id=38]
+[ext_resource path="res://Asset/audio/sound_effect/glass-bottle-breaking.wav" type="AudioStream" id=39]
+[ext_resource path="res://scene/Control.gd" type="Script" id=40]
+[ext_resource path="res://Asset/audio/sound_effect/kid-ghost-sigh.mp3" type="AudioStream" id=41]
+[ext_resource path="res://Asset/fonts/kenney_mini_square.ttf" type="DynamicFontData" id=42]
+[ext_resource path="res://Asset/audio/sound_effect/star.wav" type="AudioStream" id=43]
+[ext_resource path="res://Asset/audio/sound_effect/ding.wav" type="AudioStream" id=44]
+
+[sub_resource type="Animation" id=2]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 38, -415 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ghost:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ghost:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=14]
+resource_name = "die"
+step = 1.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1.6245, 1.6245 ),
+"update": 0,
+"values": [ Vector2( 38, -415 ), Vector2( 45, -144 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ghost:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, 119.958 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ghost:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.8, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=3]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 38, -415 ), Vector2( 38, -339 ), Vector2( 38, -415 ) ]
+}
+
+[sub_resource type="CapsuleShape2D" id=4]
+radius = 185.0
+
+[sub_resource type="Animation" id=5]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 321, -345 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( -327, 368 ) ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ghost:rotation_degrees")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ 0.0 ]
+}
+tracks/3/type = "value"
+tracks/3/path = NodePath("ghost:self_modulate")
+tracks/3/interp = 1
+tracks/3/loop_wrap = true
+tracks/3/imported = false
+tracks/3/enabled = true
+tracks/3/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=15]
+resource_name = "die"
+tracks/0/type = "value"
+tracks/0/path = NodePath("ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1.7411, 1 ),
+"update": 0,
+"values": [ Vector2( 321, -345 ), Vector2( 312, -117 ) ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath("ghost:rotation_degrees")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 0.7 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ 0.0, -180.0 ]
+}
+tracks/2/type = "value"
+tracks/2/path = NodePath("ghost:self_modulate")
+tracks/2/interp = 1
+tracks/2/loop_wrap = true
+tracks/2/imported = false
+tracks/2/enabled = true
+tracks/2/keys = {
+"times": PoolRealArray( 0.7, 1 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ), Color( 1, 1, 1, 0 ) ]
+}
+
+[sub_resource type="Animation" id=6]
+resource_name = "idle"
+length = 2.0
+loop = true
+tracks/0/type = "value"
+tracks/0/path = NodePath("ghost:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = false
+tracks/0/keys = {
+"times": PoolRealArray(  ),
+"transitions": PoolRealArray(  ),
+"update": 0,
+"values": [  ]
+}
+tracks/1/type = "value"
+tracks/1/path = NodePath(".:position")
+tracks/1/interp = 1
+tracks/1/loop_wrap = true
+tracks/1/imported = false
+tracks/1/enabled = true
+tracks/1/keys = {
+"times": PoolRealArray( 0, 1, 2 ),
+"transitions": PoolRealArray( 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( -327, 368 ), Vector2( -325, 282 ), Vector2( -327, 368 ) ]
+}
+
+[sub_resource type="RectangleShape2D" id=1]
+extents = Vector2( 90.5, 279.5 )
+
+[sub_resource type="Animation" id=24]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Vector2( 13.0001, 49 ) ]
+}
+
+[sub_resource type="Animation" id=25]
+resource_name = "escape"
+length = 3.0
+tracks/0/type = "value"
+tracks/0/path = NodePath("Player:position")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.8, 1.3, 1.8, 3 ),
+"transitions": PoolRealArray( 1, 1, 1, 1, 1 ),
+"update": 0,
+"values": [ Vector2( 13.0001, 49 ), Vector2( 236, -238 ), Vector2( 236, -302 ), Vector2( 236, -253 ), Vector2( 534, -1446 ) ]
+}
+
+[sub_resource type="CircleShape2D" id=7]
+radius = 18.0
+
+[sub_resource type="CapsuleShape2D" id=8]
+radius = 38.0
+
+[sub_resource type="CircleShape2D" id=9]
+radius = 107.075
+
+[sub_resource type="CapsuleShape2D" id=11]
+radius = 41.0
+
+[sub_resource type="CircleShape2D" id=12]
+radius = 53.9351
+
+[sub_resource type="CapsuleShape2D" id=13]
+radius = 47.0
+
+[sub_resource type="CanvasItemMaterial" id=10]
+blend_mode = 1
+
+[sub_resource type="Animation" id=16]
+length = 0.001
+tracks/0/type = "value"
+tracks/0/path = NodePath("star:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0 ),
+"transitions": PoolRealArray( 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Animation" id=17]
+resource_name = "appear"
+length = 0.4
+tracks/0/type = "value"
+tracks/0/path = NodePath("star:modulate")
+tracks/0/interp = 1
+tracks/0/loop_wrap = true
+tracks/0/imported = false
+tracks/0/enabled = true
+tracks/0/keys = {
+"times": PoolRealArray( 0, 0.4 ),
+"transitions": PoolRealArray( 1, 1 ),
+"update": 0,
+"values": [ Color( 1, 1, 1, 0 ), Color( 1, 1, 1, 1 ) ]
+}
+
+[sub_resource type="Curve" id=19]
+_data = [ Vector2( 0, 1 ), 0.0, 0.0, 0, 0, Vector2( 1, 0 ), 0.0, 0.0, 0, 0 ]
+
+[sub_resource type="CurveTexture" id=20]
+curve = SubResource( 19 )
+
+[sub_resource type="ParticlesMaterial" id=18]
+emission_shape = 2
+emission_box_extents = Vector3( 300, 300, 1 )
+flag_disable_z = true
+spread = 1.0
+flatness = 1.0
+gravity = Vector3( 0, -2, 0 )
+initial_velocity = 1.0
+orbit_velocity = 0.0
+orbit_velocity_random = 0.0
+damping = 0.54
+scale_curve = SubResource( 20 )
+
+[sub_resource type="DynamicFont" id=21]
+font_data = ExtResource( 42 )
+
+[sub_resource type="DynamicFont" id=22]
+font_data = ExtResource( 42 )
+
+[sub_resource type="DynamicFont" id=23]
+font_data = ExtResource( 42 )
+
+[node name="Level1Dark" type="Node2D"]
+position = Vector2( 543, 963 )
+script = ExtResource( 36 )
+
+[node name="Backgrand" type="Sprite" parent="."]
+modulate = Color( 0.858824, 0.858824, 1, 1 )
+texture = ExtResource( 2 )
+
+[node name="Ghost2" type="KinematicBody2D" parent="."]
+position = Vector2( -327, 368 )
+script = ExtResource( 33 )
+
+[node name="ghost" type="Sprite" parent="Ghost2"]
+modulate = Color( 0.384314, 0.333333, 0.333333, 1 )
+position = Vector2( 38, -415 )
+scale = Vector2( -0.169963, 0.169963 )
+texture = ExtResource( 3 )
+
+[node name="Ghost" type="AnimationPlayer" parent="Ghost2"]
+anims/RESET = SubResource( 2 )
+anims/die = SubResource( 14 )
+anims/idle = SubResource( 3 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost2"]
+position = Vector2( 33, -447 )
+shape = SubResource( 4 )
+
+[node name="Ghost" type="KinematicBody2D" parent="."]
+position = Vector2( -327, 368 )
+script = ExtResource( 33 )
+
+[node name="ghost" type="Sprite" parent="Ghost"]
+modulate = Color( 0.384314, 0.333333, 0.333333, 1 )
+position = Vector2( 321, -345 )
+scale = Vector2( 0.211683, 0.211683 )
+texture = ExtResource( 4 )
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Ghost"]
+position = Vector2( 406, -306 )
+shape = SubResource( 4 )
+
+[node name="Ghost" type="AnimationPlayer" parent="Ghost"]
+anims/RESET = SubResource( 5 )
+anims/die = SubResource( 15 )
+anims/idle = SubResource( 6 )
+
+[node name="Player" type="KinematicBody2D" parent="."]
+position = Vector2( -327, 368 )
+script = ExtResource( 13 )
+
+[node name="Player" type="Sprite" parent="Player"]
+position = Vector2( 13.0001, 49 )
+scale = Vector2( 0.456823, 0.456823 )
+texture = ExtResource( 9 )
+flip_h = true
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Player"]
+position = Vector2( 7, 51 )
+shape = SubResource( 1 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="Player"]
+anims/RESET = SubResource( 24 )
+anims/escape = SubResource( 25 )
+
+[node name="Bell" type="Node2D" parent="."]
+script = ExtResource( 18 )
+
+[node name="Bell" type="Sprite" parent="Bell"]
+position = Vector2( 443, 189 )
+rotation = 0.341502
+scale = Vector2( 0.229868, 0.229868 )
+texture = ExtResource( 27 )
+
+[node name="Area2D" type="Area2D" parent="Bell"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Bell/Area2D"]
+position = Vector2( 442, 189 )
+shape = SubResource( 7 )
+
+[node name="Inventory" parent="." instance=ExtResource( 28 )]
+
+[node name="Mirror" type="Node2D" parent="."]
+script = ExtResource( 10 )
+
+[node name="Area2D" type="Area2D" parent="Mirror"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Mirror/Area2D"]
+position = Vector2( 411, 262 )
+shape = SubResource( 8 )
+
+[node name="Mirror" type="Sprite" parent="Mirror"]
+position = Vector2( 412, 262 )
+texture = ExtResource( 7 )
+
+[node name="Cat" type="Node2D" parent="."]
+modulate = Color( 0.843137, 0.901961, 0.972549, 1 )
+script = ExtResource( 14 )
+
+[node name="Area2D" type="Area2D" parent="Cat"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Cat/Area2D"]
+position = Vector2( 235, 615 )
+shape = SubResource( 9 )
+
+[node name="cat" type="Sprite" parent="Cat"]
+position = Vector2( 245, 614 )
+scale = Vector2( 0.184571, 0.184571 )
+texture = ExtResource( 8 )
+
+[node name="cat_sound" type="AudioStreamPlayer" parent="Cat"]
+stream = ExtResource( 1 )
+
+[node name="Snowflower" type="Node2D" parent="."]
+script = ExtResource( 15 )
+
+[node name="Area2D" type="Area2D" parent="Snowflower"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Snowflower/Area2D"]
+position = Vector2( 404, 51 )
+shape = SubResource( 8 )
+
+[node name="Snowflower" type="Sprite" parent="Snowflower"]
+position = Vector2( 402, 55 )
+texture = ExtResource( 6 )
+
+[node name="Beard" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 30 )
+
+[node name="Beard" type="Sprite" parent="Beard"]
+position = Vector2( 368, -30 )
+rotation = 0.341502
+scale = Vector2( 0.720273, 0.726702 )
+texture = ExtResource( 26 )
+
+[node name="Area2D" type="Area2D" parent="Beard"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="Beard/Area2D"]
+position = Vector2( 367, -40 )
+shape = SubResource( 11 )
+
+[node name="Moonlight" type="Node2D" parent="."]
+script = ExtResource( 11 )
+
+[node name="Area2D" type="Area2D" parent="Moonlight"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="Moonlight/Area2D"]
+polygon = PoolVector2Array( -92, -978, -408, -553, 126, -137, 537, -559 )
+
+[node name="cystal" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 32 )
+
+[node name="cystal" type="Sprite" parent="cystal"]
+position = Vector2( 368, -30 )
+rotation = 0.341502
+scale = Vector2( 0.720273, 0.726702 )
+texture = ExtResource( 22 )
+
+[node name="Area2D" type="Area2D" parent="cystal"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="cystal/Area2D"]
+position = Vector2( 372, -30 )
+shape = SubResource( 12 )
+
+[node name="BluePotion" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 31 )
+
+[node name="BluePotion" type="Sprite" parent="BluePotion"]
+position = Vector2( 368, -30 )
+rotation = 0.0656133
+scale = Vector2( 0.720273, 0.726702 )
+texture = ExtResource( 24 )
+
+[node name="Area2D" type="Area2D" parent="BluePotion"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="BluePotion/Area2D"]
+position = Vector2( 363, -32 )
+shape = SubResource( 13 )
+
+[node name="YellowPotion" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 17 )
+
+[node name="YellowPotion" type="Sprite" parent="YellowPotion"]
+position = Vector2( 368, -30 )
+rotation = 0.0282954
+scale = Vector2( 0.720273, 0.726702 )
+texture = ExtResource( 20 )
+
+[node name="Area2D" type="Area2D" parent="YellowPotion"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="YellowPotion/Area2D"]
+position = Vector2( 363, -32 )
+shape = SubResource( 13 )
+
+[node name="Node" type="Node" parent="."]
+
+[node name="AudioStreamPlayer" type="AudioStreamPlayer" parent="Node"]
+stream = ExtResource( 23 )
+pitch_scale = 0.5
+autoplay = true
+bus = "Music_Silence"
+
+[node name="Mouse" type="Node2D" parent="."]
+script = ExtResource( 12 )
+
+[node name="mouseFX" type="CPUParticles2D" parent="Mouse"]
+material = SubResource( 10 )
+amount = 10
+lifetime = 2.0
+randomness = 1.0
+lifetime_randomness = 1.0
+local_coords = false
+texture = ExtResource( 25 )
+emission_shape = 1
+emission_sphere_radius = 10.0
+angular_velocity = 125.5
+angular_velocity_random = 0.06
+damping = 17.44
+scale_amount = 0.01
+scale_amount_random = 0.09
+color = Color( 0.941176, 0.321569, 0.85098, 1 )
+
+[node name="drug" type="Node2D" parent="."]
+visible = false
+script = ExtResource( 34 )
+
+[node name="drug" type="Sprite" parent="drug"]
+position = Vector2( 368, -30 )
+rotation = 0.0282954
+scale = Vector2( 0.720273, 0.726702 )
+texture = ExtResource( 21 )
+
+[node name="Area2D" type="Area2D" parent="drug"]
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="drug/Area2D"]
+position = Vector2( 363, -32 )
+shape = SubResource( 13 )
+
+[node name="killGhost" type="Node2D" parent="."]
+script = ExtResource( 35 )
+
+[node name="Area2D" type="Area2D" parent="killGhost"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="killGhost/Area2D"]
+polygon = PoolVector2Array( -456, -211, -327, -311, -120, -280, -4, -230, 208, -194, 353, -2, 301, 184, 94, 293, -132, 148, -144, 115, -215, 124, -430, 127, -449, 39, -520, -116 )
+
+[node name="ghost_sound" type="AudioStreamPlayer" parent="killGhost"]
+stream = ExtResource( 41 )
+
+[node name="throw" type="AudioStreamPlayer" parent="killGhost"]
+stream = ExtResource( 39 )
+volume_db = 4.0
+
+[node name="star" type="Node2D" parent="."]
+script = ExtResource( 16 )
+
+[node name="star" type="Sprite" parent="star"]
+visible = false
+position = Vector2( -48, 371 )
+rotation = 0.341502
+scale = Vector2( 0.720273, 0.726702 )
+texture = ExtResource( 19 )
+
+[node name="Area2D" type="Area2D" parent="star"]
+visible = false
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="star/Area2D"]
+position = Vector2( -45, 381 )
+shape = SubResource( 12 )
+
+[node name="AnimationPlayer" type="AnimationPlayer" parent="star"]
+anims/RESET = SubResource( 16 )
+anims/appear = SubResource( 17 )
+
+[node name="ding" type="AudioStreamPlayer" parent="star"]
+stream = ExtResource( 44 )
+
+[node name="MaigicNote" type="Node2D" parent="."]
+position = Vector2( -405, 410 )
+script = ExtResource( 5 )
+
+[node name="MaigicNote" type="Sprite" parent="MaigicNote"]
+position = Vector2( -34, 171 )
+rotation = 0.015013
+scale = Vector2( 0.995646, 1.00453 )
+texture = ExtResource( 37 )
+
+[node name="Area2D" type="Area2D" parent="MaigicNote"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="MaigicNote/Area2D"]
+polygon = PoolVector2Array( -91, 176, -54, 232, 19, 183, 11, 169, -4, 171, -39, 182, -78, 170 )
+
+[node name="MagicNote" type="Sprite" parent="MaigicNote"]
+visible = false
+position = Vector2( 406, -396 )
+scale = Vector2( 0.478299, 0.478299 )
+texture = ExtResource( 38 )
+
+[node name="escape" type="Node2D" parent="."]
+script = ExtResource( 29 )
+
+[node name="Area2D" type="Area2D" parent="escape"]
+
+[node name="CollisionPolygon2D" type="CollisionPolygon2D" parent="escape/Area2D"]
+polygon = PoolVector2Array( -186, -634, 232, -341, 560, -551, -116, -979 )
+
+[node name="star" type="AudioStreamPlayer" parent="escape"]
+stream = ExtResource( 43 )
+
+[node name="Particles2D" type="Particles2D" parent="."]
+modulate = Color( 1, 1, 1, 0.780392 )
+position = Vector2( -41, -464 )
+amount = 20
+process_material = SubResource( 18 )
+
+[node name="countdown" type="Control" parent="."]
+margin_left = 350.0
+margin_top = -893.0
+margin_right = 647.0
+margin_bottom = -817.0
+script = ExtResource( 40 )
+
+[node name="min" type="RichTextLabel" parent="countdown"]
+margin_left = -217.0
+margin_top = -25.0
+margin_right = -177.0
+margin_bottom = 15.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/normal_font = SubResource( 21 )
+text = "00"
+
+[node name="sec" type="RichTextLabel" parent="countdown"]
+margin_left = -93.0
+margin_top = -25.0
+margin_right = -53.0
+margin_bottom = 15.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/normal_font = SubResource( 22 )
+text = "00"
+
+[node name="dsec" type="RichTextLabel" parent="countdown"]
+margin_left = 29.0
+margin_top = -26.0
+margin_right = 69.0
+margin_bottom = 14.0
+rect_scale = Vector2( 5, 5 )
+custom_fonts/normal_font = SubResource( 23 )
+text = "0"
+
+[node name="Timer" type="Timer" parent="countdown"]
+process_mode = 0
+wait_time = 0.1
+autostart = true
+
+[connection signal="input_event" from="Bell/Area2D" to="Bell" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Mirror/Area2D" to="Mirror" method="_on_Area2D_input_event"]
+[connection signal="area_entered" from="Cat/Area2D" to="Cat" method="_on_Area2D_area_entered"]
+[connection signal="input_event" from="Cat/Area2D" to="Cat" method="_on_Area2D_input_event"]
+[connection signal="mouse_entered" from="Cat/Area2D" to="Cat" method="_on_Area2D_mouse_entered"]
+[connection signal="input_event" from="Snowflower/Area2D" to="Snowflower" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="Moonlight/Area2D" to="Moonlight" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="killGhost/Area2D" to="killGhost" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="star/Area2D" to="star" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="MaigicNote/Area2D" to="MaigicNote" method="_on_Area2D_input_event"]
+[connection signal="input_event" from="escape/Area2D" to="escape" method="_on_Area2D_input_event"]
+[connection signal="timeout" from="countdown/Timer" to="countdown" method="_on_Timer_timeout"]

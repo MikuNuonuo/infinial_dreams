@@ -1,0 +1,15 @@
+[remap]
+
+importer="mp3"
+type="AudioStreamMP3"
+path="res://.import/Crystal magic from the Ice Palace.mp3-7e2dbe5ac080ed362abb6bec3edcfb4f.mp3str"
+
+[deps]
+
+source_file="res://Asset/audio/Crystal magic from the Ice Palace.mp3"
+dest_files=[ "res://.import/Crystal magic from the Ice Palace.mp3-7e2dbe5ac080ed362abb6bec3edcfb4f.mp3str" ]
+
+[params]
+
+loop=true
+loop_offset=0
