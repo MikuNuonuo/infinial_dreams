@@ -1,6 +1,6 @@
 extends Node2D
 
-const n = preload("res://scene/Inventory.tscn")
+const n = preload("res://Inventory.tscn")
 var selected = false
 var mouse_offset
 var item_name
@@ -10,15 +10,18 @@ func _ready():
 	item_name = "Bell"
 	
 
+# Called every frame. 'delta' is the elapsed time since the previous frame.
+#func _process(delta):
+#	pass
+
 
 func _on_Area2D_input_event(viewport, event, shape_idx):
 	if event is InputEventMouseButton and event.button_index == BUTTON_LEFT:
 		PlayerInventory.add_item(item_name)
-		print(PlayerInventory.mouse_item)
-		Global.emit_signal("click_sfx")
+		print(Global.mouseTarget)
 		#print(item_name)
-		
-		#Global.emit_signal("picked")
+		Global.mouseTarget = "Bell"
+		Global.emit_signal("picked")
 		queue_free()
 
 	#else:Global.mouseTarget = ""
